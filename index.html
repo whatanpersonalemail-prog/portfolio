@@ -24,9 +24,11 @@
             --retro-green: #a6c995;
         }
 
-        /* =========================
-           Safe global foundation
-           ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         html {
             background: var(--retro-black) !important;
@@ -36,488 +38,206 @@
         body {
             background-color: var(--retro-bg) !important;
             color: var(--retro-text) !important;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            font-family: 'Courier New', monospace !important;
+            padding: 20px;
         }
 
-        /* Do not modify layout, sizing, fonts, margins, or display modes */
-        body,
-        body * {
-            border-color: var(--retro-line) !important;
+        .main-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid var(--retro-line-bright);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: var(--retro-black);
+            animation: fadeIn 0.6s ease-out;
         }
 
-        /* Main text colors without changing layout */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        li,
-        dt,
-        dd,
-        label,
-        blockquote {
-            color: var(--retro-text) !important;
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--retro-line-bright);
         }
 
-        /* =========================
-           Retro links
-           ========================= */
-
-        a,
-        a:visited {
-            color: var(--retro-purple) !important;
-            text-decoration-color: rgba(176, 140, 255, 0.45) !important;
+        .header h1 {
+            font-size: 1.8rem;
+            color: var(--retro-purple-light);
+            letter-spacing: 2px;
         }
 
-        a:hover,
-        a:focus {
-            color: var(--retro-purple-light) !important;
+        .gitlab-icon {
+            width: 30px;
+            height: 30px;
+            color: var(--retro-purple);
         }
 
-        /* =========================
-           Forms
-           ========================= */
-
-        input,
-        textarea,
-        select,
-        [contenteditable="true"] {
-            background-color: var(--retro-black) !important;
-            color: var(--retro-text) !important;
-            border: 1px solid var(--retro-line-bright) !important;
-            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.04) !important;
-            padding: 12px 20px !important;
-            border-radius: 8px !important;
-            font-size: 1rem !important;
-            font-family: inherit !important;
+        /* Section Box */
+        .section-box {
+            margin-bottom: 20px;
+            border: 2px solid var(--retro-line-bright);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: var(--retro-surface);
+            animation: slideInUp 0.6s ease-out;
         }
 
-        input::placeholder,
-        textarea::placeholder {
-            color: var(--retro-muted) !important;
+        .section-title {
+            font-size: 1.2rem;
+            color: var(--retro-purple-light);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        input:focus,
-        textarea:focus,
-        select:focus,
-        [contenteditable="true"]:focus {
-            border-color: var(--retro-purple) !important;
-            outline: 1px solid rgba(176, 140, 255, 0.3) !important;
-            box-shadow: 0 0 10px rgba(176, 140, 255, 0.3) !important;
+        /* Bio/Info Box */
+        .info-item {
+            margin-bottom: 12px;
+            padding: 8px;
+            border-left: 3px solid var(--retro-purple);
+            padding-left: 12px;
         }
 
-        /* =========================
-           Buttons
-           ========================= */
-
-        button,
-        input[type="button"],
-        input[type="submit"],
-        input[type="reset"],
-        [role="button"] {
-            background: var(--retro-surface) !important;
-            color: var(--retro-text) !important;
-            border: 1px solid var(--retro-line-bright) !important;
-            box-shadow: 2px 2px 0 var(--retro-black) !important;
-            transition: all 0.2s ease !important;
-            padding: 12px 30px !important;
-            cursor: pointer !important;
-            border-radius: 8px !important;
-            font-weight: bold !important;
-            font-family: inherit !important;
+        .info-item strong {
+            color: var(--retro-purple);
         }
 
-        button:hover,
-        input[type="button"]:hover,
-        input[type="submit"]:hover,
-        input[type="reset"]:hover,
-        [role="button"]:hover {
-            background: var(--retro-surface-2) !important;
-            color: var(--retro-purple-light) !important;
-            border-color: var(--retro-purple) !important;
-            box-shadow: 3px 3px 0 var(--retro-black) !important;
-            transform: translateY(-2px) !important;
+        .info-item p {
+            color: var(--retro-text);
+            margin: 5px 0;
         }
 
-        button:active,
-        input[type="button"]:active,
-        input[type="submit"]:active,
-        input[type="reset"]:active,
-        [role="button"]:active {
-            box-shadow: 1px 1px 0 var(--retro-black) !important;
-            transform: translate(1px, 1px) !important;
-        }
-
-        /* =========================
-           Common surfaces
-           ========================= */
-
-        [role="dialog"],
-        [role="menu"],
-        [role="listbox"],
-        [role="tooltip"],
-        [role="alertdialog"],
-        dialog,
-        pre {
-            background-color: var(--retro-surface) !important;
-            color: var(--retro-text) !important;
-            border-color: var(--retro-line-bright) !important;
-        }
-
-        /* =========================
-           Portfolio Custom Styles
-           ========================= */
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto !important;
-            padding: 0 20px !important;
-        }
-
-        /* Navigation */
-        .navbar {
-            background-color: var(--retro-surface) !important;
-            color: var(--retro-text) !important;
-            padding: 1rem 0 !important;
-            position: sticky !important;
-            top: 0 !important;
-            z-index: 100 !important;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) !important;
-            border-bottom: 1px solid var(--retro-line-bright) !important;
-        }
-
-        .navbar .container {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-        }
-
-        .logo {
-            font-size: 1.8rem !important;
-            font-weight: bold !important;
-            color: var(--retro-purple-light) !important;
-        }
-
-        .nav-links {
-            display: flex !important;
-            list-style: none !important;
-            gap: 2rem !important;
-        }
-
-        .nav-links a {
-            color: var(--retro-text) !important;
-            text-decoration: none !important;
-            transition: color 0.3s ease !important;
-        }
-
-        .nav-links a:hover {
-            color: var(--retro-purple) !important;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--retro-purple) 0%, var(--retro-orange) 100%) !important;
-            color: var(--retro-black) !important;
-            padding: 6rem 0 !important;
-            text-align: center !important;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .hero-content h2 {
-            font-size: 3rem !important;
-            margin-bottom: 1rem !important;
-            color: var(--retro-black) !important;
-            animation: slideInUp 0.8s ease-out 0.2s both;
-        }
-
-        .subtitle {
-            font-size: 1.3rem !important;
-            margin-bottom: 2rem !important;
-            opacity: 0.9 !important;
-            color: var(--retro-black) !important;
-        }
-
-        .cta-button {
-            background-color: var(--retro-black) !important;
-            color: var(--retro-purple) !important;
-            padding: 12px 30px !important;
-            border: 2px solid var(--retro-black) !important;
-            border-radius: 5px !important;
-            font-size: 1rem !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            font-weight: bold !important;
-        }
-
-        .cta-button:hover {
-            background-color: transparent !important;
-            color: var(--retro-black) !important;
-            transform: translateY(-2px) !important;
-        }
-
-        /* About Section */
-        .about {
-            padding: 4rem 0 !important;
-            background-color: var(--retro-bg) !important;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .about h2 {
-            text-align: center !important;
-            font-size: 2.5rem !important;
-            margin-bottom: 3rem !important;
-            color: var(--retro-purple-light) !important;
-        }
-
-        .about-content {
-            display: flex !important;
-            align-items: center !important;
-            gap: 3rem !important;
-        }
-
-        .profile-pic {
-            width: 250px !important;
-            height: 250px !important;
-            border-radius: 50% !important;
-            object-fit: cover !important;
-            border: 5px solid var(--retro-purple) !important;
-            animation: bounce 2s infinite;
-        }
-
-        .about-text {
-            flex: 1 !important;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem !important;
-            font-size: 1.1rem !important;
-            line-height: 1.8 !important;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 4rem 0 !important;
-            background-color: var(--retro-surface) !important;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .projects h2 {
-            text-align: center !important;
-            font-size: 2.5rem !important;
-            margin-bottom: 3rem !important;
-            color: var(--retro-purple-light) !important;
-        }
-
+        /* Projects Grid */
         .projects-grid {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-            gap: 2rem !important;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
         }
 
         .project-card {
-            background-color: var(--retro-surface-2) !important;
-            border-radius: 8px !important;
-            overflow: hidden !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
-            transition: transform 0.3s ease !important;
-            border: 1px solid var(--retro-line-bright) !important;
+            border: 1px solid var(--retro-line-bright);
+            border-radius: 6px;
+            padding: 15px;
+            background-color: var(--retro-black);
+            transition: all 0.3s ease;
             animation: fadeIn 0.4s ease-out;
         }
 
         .project-card:hover {
-            transform: translateY(-5px) !important;
-        }
-
-        .project-card img {
-            width: 100% !important;
-            height: 200px !important;
-            object-fit: cover !important;
+            border-color: var(--retro-purple);
+            box-shadow: 0 0 10px rgba(176, 140, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .project-card h3 {
-            padding: 1.5rem 1rem 0.5rem !important;
-            color: var(--retro-purple-light) !important;
+            color: var(--retro-purple-light);
+            margin-bottom: 8px;
+            font-size: 1rem;
         }
 
         .project-card p {
-            padding: 0 1rem !important;
-            color: var(--retro-muted) !important;
+            color: var(--retro-muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
         }
 
-        .project-link {
-            display: inline-block !important;
-            padding: 0.5rem 1rem !important;
-            margin: 1rem !important;
-            background-color: var(--retro-purple) !important;
-            color: var(--retro-black) !important;
-            text-decoration: none !important;
-            border-radius: 5px !important;
-            transition: all 0.3s ease !important;
-            font-weight: bold !important;
+        /* Email Section */
+        .email-section {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f2438 100%);
+            border: 2px solid var(--retro-line-bright);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        .project-link:hover {
-            background-color: var(--retro-purple-light) !important;
+        .email-section h2 {
+            color: var(--retro-text);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .email-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            color: var(--retro-orange);
+        }
+
+        .email-link {
+            color: var(--retro-purple);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .email-link:hover {
+            color: var(--retro-orange);
         }
 
         /* Skills Section */
-        .skills {
-            padding: 4rem 0 !important;
-            background-color: var(--retro-bg) !important;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .skills h2 {
-            text-align: center !important;
-            font-size: 2.5rem !important;
-            margin-bottom: 3rem !important;
-            color: var(--retro-purple-light) !important;
-        }
-
         .skills-grid {
-            display: grid !important;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-            gap: 2rem !important;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
 
-        .skill-item {
-            background-color: var(--retro-surface) !important;
-            padding: 2rem !important;
-            border-radius: 8px !important;
-            text-align: center !important;
-            border-left: 4px solid var(--retro-purple) !important;
-            transition: all 0.3s ease !important;
-            animation: fadeIn 0.4s ease-out;
+        .skill-tag {
+            display: inline-block;
+            background-color: var(--retro-surface-2);
+            color: var(--retro-text);
+            padding: 8px 12px;
+            border: 1px solid var(--retro-line-bright);
+            border-radius: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
-        .skill-item:hover {
-            border-left-color: var(--retro-orange) !important;
-            transform: translateX(5px) !important;
+        .skill-tag:hover {
+            background-color: var(--retro-purple);
+            color: var(--retro-black);
+            border-color: var(--retro-purple);
         }
 
-        .skill-item h3 {
-            margin-bottom: 0.5rem !important;
-            color: var(--retro-purple-light) !important;
-        }
-
-        .skill-item p {
-            color: var(--retro-muted) !important;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 4rem 0 !important;
-            background-color: var(--retro-surface) !important;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .contact h2 {
-            text-align: center !important;
-            font-size: 2.5rem !important;
-            margin-bottom: 1rem !important;
-            color: var(--retro-purple-light) !important;
-        }
-
-        .contact-intro {
-            text-align: center !important;
-            font-size: 1.1rem !important;
-            margin-bottom: 2rem !important;
-            color: var(--retro-muted) !important;
-        }
-
-        .contact-info {
-            text-align: center !important;
-            margin-bottom: 2rem !important;
-        }
-
-        .contact-info p {
-            margin: 0.5rem 0 !important;
-        }
-
-        .contact-info a {
-            color: var(--retro-purple) !important;
-            text-decoration: none !important;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline !important;
-        }
-
+        /* Social Links */
         .social-links {
-            margin-top: 1rem !important;
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
         }
 
-        .social-links a {
-            display: inline-block !important;
-            margin: 0 1rem !important;
-            padding: 0.5rem 1rem !important;
-            background-color: var(--retro-purple) !important;
-            color: var(--retro-black) !important;
-            border-radius: 5px !important;
-            text-decoration: none !important;
-            transition: all 0.3s ease !important;
-            font-weight: bold !important;
+        .social-link {
+            color: var(--retro-text);
+            text-decoration: none;
+            border: 1px solid var(--retro-line-bright);
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .social-links a:hover {
-            background-color: var(--retro-orange) !important;
+        .social-link:hover {
+            background-color: var(--retro-purple);
+            color: var(--retro-black);
+            border-color: var(--retro-purple);
         }
 
-        .contact-form {
-            max-width: 600px !important;
-            margin: 2rem auto !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 1rem !important;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.75rem !important;
-        }
-
-        .submit-button {
-            background-color: var(--retro-purple) !important;
-            color: var(--retro-black) !important;
-            padding: 0.75rem !important;
-            border: none !important;
-            border-radius: 5px !important;
-            font-size: 1rem !important;
-            cursor: pointer !important;
-            transition: all 0.3s ease !important;
-            font-weight: bold !important;
-        }
-
-        .submit-button:hover {
-            background-color: var(--retro-orange) !important;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--retro-surface-2) !important;
-            color: var(--retro-text) !important;
-            text-align: center !important;
-            padding: 2rem 0 !important;
-            border-top: 1px solid var(--retro-line-bright) !important;
-        }
-
-        /* =========================
-           Animations
-           ========================= */
-
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        @keyframes fadeInDown {
+        @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -536,190 +256,99 @@
             }
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* =========================
-           Responsive
-           ========================= */
-
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h2 {
-                font-size: 2rem !important;
+            .main-container {
+                max-width: 100%;
+                padding: 15px;
             }
 
-            .about-content {
-                flex-direction: column !important;
-                text-align: center !important;
+            .header h1 {
+                font-size: 1.5rem;
             }
 
-            .profile-pic {
-                width: 200px !important;
-                height: 200px !important;
-            }
-
-            .nav-links {
-                flex-direction: column !important;
-                gap: 1rem !important;
+            .section-box {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <h1 class="logo">[Your Name]</h1>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>[Your Name]</h1>
+            <svg class="gitlab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
+            </svg>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h2>Welcome to My Portfolio</h2>
-                <p class="subtitle">[Your professional title/headline]</p>
-                <button class="cta-button">View My Work</button>
+        <!-- About Section -->
+        <div class="section-box">
+            <h2 class="section-title">About Me</h2>
+            <div class="info-item">
+                <p><strong>Name:</strong> [Your Name]</p>
+            </div>
+            <div class="info-item">
+                <p><strong>Location:</strong> [Your Location]</p>
+            </div>
+            <div class="info-item">
+                <p><strong>Bio:</strong> [Your Professional Bio]</p>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="[placeholder-image-url]" alt="Profile Picture" class="profile-pic">
-                <div class="about-text">
-                    <p>[Write a brief introduction about yourself, your background, and your career goals]</p>
-                    <p>[Add more details about your experience and what you're passionate about]</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
+        <!-- Projects Section -->
+        <div class="section-box">
+            <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="[project-1-image]" alt="Project 1">
-                    <h3>Project Title 1</h3>
-                    <p>[Project description]</p>
-                    <a href="[project-link]" class="project-link">View Project</a>
+                    <h3>[Project Title 1]</h3>
+                    <p>[Project description and key features]</p>
                 </div>
                 <div class="project-card">
-                    <img src="[project-2-image]" alt="Project 2">
-                    <h3>Project Title 2</h3>
-                    <p>[Project description]</p>
-                    <a href="[project-link]" class="project-link">View Project</a>
+                    <h3>[Project Title 2]</h3>
+                    <p>[Project description and key features]</p>
                 </div>
                 <div class="project-card">
-                    <img src="[project-3-image]" alt="Project 3">
-                    <h3>Project Title 3</h3>
-                    <p>[Project description]</p>
-                    <a href="[project-link]" class="project-link">View Project</a>
+                    <h3>[Project Title 3]</h3>
+                    <p>[Project description and key features]</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>My Skills</h2>
+        <!-- Skills Section -->
+        <div class="section-box">
+            <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>[Skill 1]</h3>
-                    <p>[Proficiency level/description]</p>
-                </div>
-                <div class="skill-item">
-                    <h3>[Skill 2]</h3>
-                    <p>[Proficiency level/description]</p>
-                </div>
-                <div class="skill-item">
-                    <h3>[Skill 3]</h3>
-                    <p>[Proficiency level/description]</p>
-                </div>
-                <div class="skill-item">
-                    <h3>[Skill 4]</h3>
-                    <p>[Proficiency level/description]</p>
-                </div>
+                <span class="skill-tag">[Skill 1]</span>
+                <span class="skill-tag">[Skill 2]</span>
+                <span class="skill-tag">[Skill 3]</span>
+                <span class="skill-tag">[Skill 4]</span>
+                <span class="skill-tag">[Skill 5]</span>
+                <span class="skill-tag">[Skill 6]</span>
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">[Add a message about how people can contact you]</p>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:[your-email]">[your-email]</a></p>
-                <p><strong>Phone:</strong> <a href="tel:[your-phone]">[your-phone]</a></p>
-                <div class="social-links">
-                    <a href="[linkedin-url]" target="_blank">LinkedIn</a>
-                    <a href="[github-url]" target="_blank">GitHub</a>
-                    <a href="[twitter-url]" target="_blank">Twitter</a>
-                </div>
+        <!-- Email Section -->
+        <div class="email-section">
+            <h2>EMAIL</h2>
+            <svg class="email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22 7-10 5L2 7"></path>
+            </svg>
+            <p><a href="mailto:[your-email@example.com]" class="email-link">[your-email@example.com]</a></p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="section-box">
+            <h2 class="section-title">Connect</h2>
+            <div class="social-links">
+                <a href="[github-url]" class="social-link" target="_blank">GitHub</a>
+                <a href="[linkedin-url]" class="social-link" target="_blank">LinkedIn</a>
+                <a href="[twitter-url]" class="social-link" target="_blank">Twitter</a>
+                <a href="[portfolio-url]" class="social-link" target="_blank">Portfolio</a>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 [Your Name]. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
