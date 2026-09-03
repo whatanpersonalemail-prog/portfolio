@@ -1,0 +1,565 @@
+:root {
+    color-scheme: dark !important;
+
+    --retro-black: #111214;
+    --retro-bg: #1b1c1f;
+    --retro-surface: #222328;
+    --retro-surface-2: #292a30;
+    --retro-line: #3b3d45;
+    --retro-line-bright: #5a5362;
+
+    --retro-text: #d2ced8;
+    --retro-muted: #918c98;
+
+    --retro-purple: #b08cff;
+    --retro-purple-light: #d2bdff;
+    --retro-orange: #d69762;
+    --retro-green: #a6c995;
+}
+
+/* =========================
+   Safe global foundation
+   ========================= */
+
+html {
+    background: var(--retro-black) !important;
+    color-scheme: dark !important;
+}
+
+body {
+    background-color: var(--retro-bg) !important;
+    color: var(--retro-text) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Do not modify layout, sizing, fonts, margins, or display modes */
+body,
+body * {
+    border-color: var(--retro-line) !important;
+}
+
+/* Main text colors without changing layout */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+dt,
+dd,
+label,
+blockquote {
+    color: var(--retro-text) !important;
+}
+
+/* =========================
+   Retro links
+   ========================= */
+
+a,
+a:visited {
+    color: var(--retro-purple) !important;
+    text-decoration-color: rgba(176, 140, 255, 0.45) !important;
+}
+
+a:hover,
+a:focus {
+    color: var(--retro-purple-light) !important;
+}
+
+/* =========================
+   Forms
+   ========================= */
+
+input,
+textarea,
+select,
+[contenteditable="true"] {
+    background-color: var(--retro-black) !important;
+    color: var(--retro-text) !important;
+    border: 1px solid var(--retro-line-bright) !important;
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.04) !important;
+    padding: 12px 20px !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--retro-muted) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+[contenteditable="true"]:focus {
+    border-color: var(--retro-purple) !important;
+    outline: 1px solid rgba(176, 140, 255, 0.3) !important;
+    box-shadow: 0 0 10px rgba(176, 140, 255, 0.3) !important;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[role="button"] {
+    background: var(--retro-surface) !important;
+    color: var(--retro-text) !important;
+    border: 1px solid var(--retro-line-bright) !important;
+    box-shadow: 2px 2px 0 var(--retro-black) !important;
+    transition: all 0.2s ease !important;
+    padding: 12px 30px !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    font-weight: bold !important;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+[role="button"]:hover {
+    background: var(--retro-surface-2) !important;
+    color: var(--retro-purple-light) !important;
+    border-color: var(--retro-purple) !important;
+    box-shadow: 3px 3px 0 var(--retro-black) !important;
+    transform: translateY(-2px) !important;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+[role="button"]:active {
+    box-shadow: 1px 1px 0 var(--retro-black) !important;
+    transform: translate(1px, 1px) !important;
+}
+
+/* =========================
+   Common surfaces
+   Only target elements that
+   are explicitly surfaces
+   ========================= */
+
+[role="dialog"],
+[role="menu"],
+[role="listbox"],
+[role="tooltip"],
+[role="alertdialog"],
+dialog,
+pre {
+    background-color: var(--retro-surface) !important;
+    color: var(--retro-text) !important;
+    border-color: var(--retro-line-bright) !important;
+}
+
+/* =========================
+   Weather Dashboard Custom Styles
+   ========================= */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 20px !important;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 3rem !important;
+}
+
+.title-fade {
+    font-size: 3rem !important;
+    margin-bottom: 1.5rem !important;
+    animation: fadeInDown 0.8s ease-out;
+    color: var(--retro-purple-light) !important;
+}
+
+/* Search Box */
+.search-box {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.search-input {
+    flex: 1 !important;
+    transition: all 0.3s ease !important;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 10px rgba(176, 140, 255, 0.3) !important;
+}
+
+.search-btn {
+    background: var(--retro-surface) !important;
+    border-color: var(--retro-purple) !important;
+    color: var(--retro-purple) !important;
+}
+
+.search-btn:hover {
+    background: var(--retro-surface-2) !important;
+    color: var(--retro-purple-light) !important;
+    border-color: var(--retro-purple-light) !important;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    text-align: center !important;
+    padding: 2rem !important;
+    animation: fadeIn 0.3s ease-out;
+    color: var(--retro-text) !important;
+}
+
+.spinner {
+    border: 4px solid var(--retro-line) !important;
+    border-top: 4px solid var(--retro-purple) !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem !important;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error Message */
+.error-message {
+    background-color: rgba(214, 151, 98, 0.1) !important;
+    color: var(--retro-orange) !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    border: 1px solid var(--retro-orange) !important;
+    animation: slideInDown 0.4s ease-out;
+}
+
+/* Weather Card */
+.weather-card {
+    background: var(--retro-surface) !important;
+    border-radius: 12px !important;
+    padding: 2rem !important;
+    margin-bottom: 2rem !important;
+    box-shadow: 0 0 20px rgba(176, 140, 255, 0.1) !important;
+    border: 1px solid var(--retro-line-bright) !important;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.current-weather {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 2rem !important;
+    border-bottom: 1px solid var(--retro-line) !important;
+    padding-bottom: 2rem !important;
+    gap: 2rem !important;
+}
+
+.location-info {
+    flex: 1 !important;
+    animation: slideInLeft 0.5s ease-out;
+}
+
+.location-info h2 {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+    color: var(--retro-purple-light) !important;
+}
+
+.date-time {
+    color: var(--retro-muted) !important;
+    font-size: 0.9rem !important;
+}
+
+.weather-main {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    animation: slideInRight 0.5s ease-out;
+}
+
+.weather-icon {
+    width: 80px !important;
+    height: 80px !important;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.temp-section {
+    text-align: center !important;
+}
+
+.temperature {
+    font-size: 3rem !important;
+    font-weight: bold !important;
+    color: var(--retro-purple) !important;
+    display: block !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.weather-description {
+    font-size: 1.2rem !important;
+    color: var(--retro-muted) !important;
+    text-transform: capitalize !important;
+}
+
+/* Weather Details Grid */
+.weather-details {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 1rem !important;
+}
+
+.detail-card {
+    background: var(--retro-surface-2) !important;
+    color: var(--retro-text) !important;
+    padding: 1.5rem !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    border: 1px solid var(--retro-line) !important;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px) !important;
+    border-color: var(--retro-purple) !important;
+    background: rgba(176, 140, 255, 0.05) !important;
+}
+
+.detail-card h3 {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+    color: var(--retro-purple-light) !important;
+}
+
+.detail-value {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    color: var(--retro-text) !important;
+}
+
+/* Forecast Section */
+.forecast-section {
+    margin-top: 2rem !important;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.forecast-section h2 {
+    margin-bottom: 1.5rem !important;
+    font-size: 2rem !important;
+    color: var(--retro-purple-light) !important;
+}
+
+.forecast-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 1.5rem !important;
+}
+
+.forecast-card {
+    background: var(--retro-surface) !important;
+    border-radius: 8px !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    box-shadow: 0 0 10px rgba(176, 140, 255, 0.05) !important;
+    border: 1px solid var(--retro-line-bright) !important;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px) !important;
+    background: var(--retro-surface-2) !important;
+    border-color: var(--retro-purple) !important;
+    box-shadow: 0 0 20px rgba(176, 140, 255, 0.15) !important;
+}
+
+.forecast-date {
+    color: var(--retro-purple-light) !important;
+    font-weight: bold !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.forecast-icon {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0.5rem auto !important;
+    animation: bounce 2s infinite;
+}
+
+.forecast-temp {
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+    color: var(--retro-text) !important;
+    margin: 0.5rem 0 !important;
+}
+
+.forecast-desc {
+    color: var(--retro-muted) !important;
+    font-size: 0.9rem !important;
+    text-transform: capitalize !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.forecast-details {
+    display: flex !important;
+    justify-content: space-around !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.8rem !important;
+    color: var(--retro-muted) !important;
+}
+
+/* Default Message */
+.default-message {
+    text-align: center !important;
+    color: var(--retro-muted) !important;
+    padding: 3rem !important;
+    font-size: 1.3rem !important;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+   Animations
+   ========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 768px) {
+    .title-fade {
+        font-size: 2rem !important;
+    }
+
+    .search-box {
+        flex-direction: column !important;
+    }
+
+    .current-weather {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .weather-main {
+        flex-direction: column !important;
+    }
+
+    .temperature {
+        font-size: 2.5rem !important;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    }
+
+    .weather-details {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
