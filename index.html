@@ -74,6 +74,11 @@
             color: var(--retro-purple);
         }
 
+        .header img {
+            width: 30px;
+            height: 30px;
+        }
+
         /* Section Box */
         .section-box {
             margin-bottom: 20px;
@@ -161,8 +166,8 @@
         }
 
         .email-icon {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
             margin: 0 auto 15px;
             color: var(--retro-orange);
         }
@@ -186,7 +191,9 @@
         }
 
         .skill-tag {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background-color: var(--retro-surface-2);
             color: var(--retro-text);
             padding: 8px 12px;
@@ -196,6 +203,12 @@
             margin-bottom: 8px;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+        }
+
+        .skill-tag img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
         }
 
         .skill-tag:hover {
@@ -278,9 +291,7 @@
         <!-- Header -->
         <div class="header">
             <h1>UpsidedownProduction</h1>
-            <a href="https://gitlab.com/stonecoding1"><img src="gitlab-logo-700-rgb.png"></a>
-                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
-            </svg>
+            <a href="https://gitlab.com/stonecoding1"><img src="gitlab-logo-700-rgb.png" alt="GitLab"></a>
         </div>
 
         <!-- About Section -->
@@ -319,23 +330,20 @@
         <div class="section-box">
             <h2 class="section-title">Skills</h2>
             <div class="skills-grid">
-                <span class="skill-tag">Python <img src="https://cdn-icons-png.flaticon.com/512/5968/5968286.png"></span>
-                <span class="skill-tag">HTML <img src="https://play-lh.googleusercontent.com/qqWqgCrrDQOjgQTHiJcrl0I3-ZYr8S5XsbhZNsHYvg0aOASUOM7zoZBmxmOVDjZbPNna"></span>
-                <span class="skill-tag">CSS <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg"></span>
+                <span class="skill-tag">Python <img src="https://cdn-icons-png.flaticon.com/512/5968/5968286.png" alt="Python"></span>
+                <span class="skill-tag">HTML <img src="https://play-lh.googleusercontent.com/qqWqgCrrDQOjgQTHiJcrl0I3-ZYr8S5XsbhZNsHYvg0aOASUOM7zoZBmxmOVDjZbPNna" alt="HTML"></span>
+                <span class="skill-tag">CSS <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg" alt="CSS"></span>
             </div>
         </div>
 
         <!-- Email Section -->
         <div class="email-section">
             <h2>EMAIL</h2>
-            <img src="mail,png">
-                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                <path d="m22 7-10 5L2 7"></path>
-            </svg>
+            <img src="mail.png" alt="Email" class="email-icon">
             <p><a href="mailto:mattiapersonaler@proton.me" class="email-link">mattiapersonaler@proton.me</a></p>
         </div>
-        </div>
-    <p>I almost finished my kagi searches to make this website</p>
+
+        <p style="text-align: center; margin-top: 20px; color: var(--retro-muted);">I almost finished my kagi searches to make this website</p>
     </div>
 </body>
 </html>
