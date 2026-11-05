@@ -1,10 +1,11 @@
-        # tedit one-line installer: clones the repo and runs its install.sh for you, 
-# with a GitHub-style spinner. H   ost it on a server and install with:
+#!/bin/sh
+# tedit one-line installer: clones the repo and runs its install.sh for you,
+# with a GitHub-style spinner. Host it on a server and install with:
 #
 #   curl -fsSL https://<your-server-url> | sh
 #
-# Override the repo / clone loca tion if you ever need to:
-#   TEDIT_REPO   =https://gi thub.com/us   er/tedit.git TEDIT_DIR=... curl -fsSL ... | sh
+# Override the repo / clone location if you ever need to:
+#   TEDIT_REPO=https://gitlab.com/stonecoding1/tedit.git TEDIT_DIR=... curl -fsSL ... | sh
 # Keep the .git metadata after install with KEEP_GIT=1.
 
 set -u
@@ -76,7 +77,6 @@ if [ -d "$DEST/.git" ]; then
   ok=$?
   action="updated"
 else
-  # clean leftover folder without .git to allow fresh clone
   if [ -e "$DEST" ]; then
     rm -rf "$DEST" 2>/dev/null || true
   fi
@@ -94,7 +94,7 @@ spin_stop 0 "$action the repository into $DEST"
 # --- run the repo's own installer --------------------------------------------------
 spin_start "installing (desktop entry + tedit on PATH)"
 out=$(sh "$DEST/install.sh" 2>&1)
-if [ $? -ne 0 ]; then
+status=$?
+if [ "$status" -ne 0 ]; then
   spin_stop 1 "install failed"
   printf '%s%s%s\n' "$dim" "$out" "$reset"
-  die "install.sh failed"
